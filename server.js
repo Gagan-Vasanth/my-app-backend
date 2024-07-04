@@ -21,6 +21,12 @@ app.use('/api/users', userRoutes)
 
 const port = process.env.PORT || 8000;
 
+app.use('/', (req, res) => {
+    return res.json({
+        message: 'Server is running successfully'
+    })
+})
+
 app.listen(port, () => {
     console.log('Server is running on PORT: ', port);
 })
